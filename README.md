@@ -30,5 +30,4 @@ Key features:
 - Member C – TailwindCSS styling, ApexCharts rendering
 
 ■ Deployed URL
-Replace with your production link, e.g.  
 https://dynamic-web-app-one.vercel.app/
