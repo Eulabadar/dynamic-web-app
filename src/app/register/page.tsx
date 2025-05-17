@@ -42,81 +42,93 @@ export default function RegisterPage() {
     console.log('Validated:', data);
   };
 
-  return (
-    <div className="p-6 w-[40%] mx-auto bg-white/40 backdrop-blur-md rounded-xl shadow-xl">
-      <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">User Registration</h1>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        {/* First Name */}
-        <div>
-          <input
-            {...register('firstName')}
-            placeholder="First Name"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>}
-        </div>
-
-        {/* Last Name */}
-        <div>
-          <input
-            {...register('lastName')}
-            placeholder="Last Name"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>}
-        </div>
-
-        {/* Email */}
-        <div>
-          <input
-            {...register('email')}
-            placeholder="Email"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
-        </div>
-
-        {/* Phone Number */}
-        <div>
-          <input
-            {...register('phone')}
-            placeholder="Phone Number"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
-        </div>
-
-        {/* Address */}
-        <div>
-          <input
-            {...register('address')}
-            value={selectedAddress}
-            readOnly
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address.message}</p>}
-        </div>
-
-        <AddressPicker
-          onSelect={(address: string) => {
-            setSelectedAddress(address);
-            setValue('address', address);
-          }}
+return (
+  <div className="p-4 sm:p-6 w-full max-w-xl mx-auto bg-white/40 backdrop-blur-md rounded-xl shadow-xl">
+    <h1 className="text-2xl sm:text-3xl font-bold text-center mb-6 text-gray-800">User Registration</h1>
+    
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+      {/* First Name */}
+      <div>
+        <input
+          {...register('firstName')}
+          placeholder="First Name"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
+        {errors.firstName && (
+          <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>
+        )}
+      </div>
 
-        {/* Submit Button */}
-        <div className="flex flex-col items-center space-y-4 mt-6">
-          <button
-            type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition"
-          >
-            Register
-          </button>
-          <a href="/login" className="text-blue-600 hover:underline text-sm">
-            Already have an account? Login
-          </a>
-        </div>
-      </form>
-    </div>
-  );
+      {/* Last Name */}
+      <div>
+        <input
+          {...register('lastName')}
+          placeholder="Last Name"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        {errors.lastName && (
+          <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>
+        )}
+      </div>
+
+      {/* Email */}
+      <div>
+        <input
+          {...register('email')}
+          placeholder="Email"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        {errors.email && (
+          <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+        )}
+      </div>
+
+      {/* Phone Number */}
+      <div>
+        <input
+          {...register('phone')}
+          placeholder="Phone Number"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        {errors.phone && (
+          <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+        )}
+      </div>
+
+      {/* Address (readonly) */}
+      <div>
+        <input
+          {...register('address')}
+          value={selectedAddress}
+          readOnly
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        {errors.address && (
+          <p className="text-red-500 text-sm mt-1">{errors.address.message}</p>
+        )}
+      </div>
+
+      {/* Address Picker */}
+      <AddressPicker
+        onSelect={(address: string) => {
+          setSelectedAddress(address);
+          setValue('address', address);
+        }}
+      />
+
+      {/* Submit Button */}
+      <div className="flex flex-col items-center space-y-4 mt-6">
+        <button
+          type="submit"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition"
+        >
+          Register
+        </button>
+        <a href="/login" className="text-blue-600 hover:underline text-sm">
+          Already have an account? Login
+        </a>
+      </div>
+    </form>
+  </div>
+);
 }
