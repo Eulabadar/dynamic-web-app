@@ -25,7 +25,7 @@ Key features:
 
 ■ Team Member Contributions
 - Leader – Lead developer: UI components, auth logic, dashboard integration
-- Member A – Registration form (React‑Hook‑Form + Zod), Leaflet map
+- Member A – Registration form (React‑Hook‑Form + Zod), Google map
 - Member B – Posts & comments management
 - Member C – TailwindCSS styling, ApexCharts rendering
 
