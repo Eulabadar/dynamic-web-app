@@ -26,7 +26,7 @@ Key features:
 ■ Team Member Contributions
 - Christian Sus – Lead developer: UI components, auth logic, dashboard integration
 - Eula Yvette Badar – Registration form (React‑Hook‑Form + Zod), Google map
-- Jamaica Glodo– Posts & comments management
+- Jamaica Glodo – Posts & comments management
 - Ahiezer Furio – TailwindCSS styling, ApexCharts rendering
 
 ■ Deployed URL
