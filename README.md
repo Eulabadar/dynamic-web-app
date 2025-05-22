@@ -24,10 +24,10 @@ Key features:
 (No database needed; JSONPlaceholder is used as the dummy API.)
 
 ■ Team Member Contributions
-- Leader – Lead developer: UI components, auth logic, dashboard integration
-- Member A – Registration form (React‑Hook‑Form + Zod), Google map
-- Member B – Posts & comments management
-- Member C – TailwindCSS styling, ApexCharts rendering
+- Christian Sus – Lead developer: UI components, auth logic, dashboard integration
+- Eula Yvette Badar – Registration form (React‑Hook‑Form + Zod), Google map
+- Jamaica Glodo– Posts & comments management
+- Ahiezer Furio – TailwindCSS styling, ApexCharts rendering
 
 ■ Deployed URL
 https://dynamic-web-app-one.vercel.app/
